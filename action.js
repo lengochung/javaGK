@@ -11,12 +11,12 @@ for (const key in localStorage) {
 localStorage.i = dem1;
 localStorage.k = dem2;
 //Tạo trước 3 sinh viên
-// check_insert(new Student(501200001,'Phan Thành Công',20,0902525425,'CD20CT1','CN-TT'));
-// check_insert(new Student(501200018,'Lê Ngọc Hưng',40,0902525425,'CD20CT2','CN-TT'));
-// check_insert(new Student(501200031,'Lâm Dương An',18,0902525425,'CD20CK4','CƠ KHÍ'));
-// check_insert(new Student(501200042,'Lê Thị Phương Lan',18,0902525425,'CD20CT1','CN-TT'));
-// check_insert(new Student(501200111,'Nguyễn Hữu Tài',18,0902525425,'CD20KT3','KINH TẾ'));
-// check_insert(new Student(501200000,'Phạm Quốc Tú',18,0902525425,'CD20CK5','CƠ KHÍ'));
+check_insert(new Student(501200001,'Phan Thành Công',20,0902525425,'CD20CT1','CN-TT'));
+check_insert(new Student(501200018,'Lê Ngọc Hưng',40,0902525425,'CD20CT2','CN-TT'));
+check_insert(new Student(501200031,'Lâm Dương An',18,0902525425,'CD20CK4','CƠ KHÍ'));
+check_insert(new Student(501200042,'Lê Thị Phương Lan',18,0902525425,'CD20CT1','CN-TT'));
+check_insert(new Student(501200111,'Nguyễn Hữu Tài',18,0902525425,'CD20KT3','KINH TẾ'));
+check_insert(new Student(501200000,'Phạm Quốc Tú',18,0902525425,'CD20CK5','CƠ KHÍ'));
 
 // Khai báo trỏ đến bảng sinh viên và bảng xóa nhân viên
 var student_pane = document.getElementById('student_pane');

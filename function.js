@@ -121,13 +121,13 @@ function check_insert(object){
     if(isval){
         localStorage['student' + localStorage.i] = JSON.stringify(object);
         localStorage.i++;
-        alert('Thêm thành công');
         setValueforFormInput("");
+        alert('Thêm thành công');
     } else { alert('MSSV đã tồn tại trong hệ thống'); }
 }
  // Trả về rỗng cho các Form nhập
 function setValueforFormInput(valueSet){
-    for (const iterator of document.getElementsByClassName('null_value')) { iterator.setAttribute('placeholder',valueSet)}
+    for (const iterator of document.getElementsByClassName('null_value')) { iterator.value = valueSet}
 }
 
 

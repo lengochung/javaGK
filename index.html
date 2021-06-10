@@ -1,20 +1,17 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>Bài tập giữa kỳ</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Js -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+    <link rel="stylesheet" href="style.css">k
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body onload="loadStudent()">
-      <!-- header -->
-      <header>
+       <!-- header -->
+       <header>
         <!--  -->
           <div id="logoBrand">
                 <img src="./image/max.png" width="200" height="50" alt="">
@@ -29,7 +26,7 @@
         <!--  -->
         <!--  -->
           <nav class="navbar navbar-expand-sm navbar-light bg-light">
-            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            <button class="navbar-toggler d-lg-none"  data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
                 aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -51,7 +48,7 @@
               </ul>
               <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="...MSSV, tìm trong tên" id="search">
-                <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" onclick="re_search_nameID(document.getElementById('search').value)">Tìm</button>
+                <button class="btn btn-outline-dark my-2 my-sm-0" onclick="re_search_nameID(document.getElementById('search').value)">Tìm</button>
               </form>
             </div>
           </nav>
@@ -95,19 +92,20 @@
 
 
 
-      <div id="khung">
+      <!-- <div id="khung" class=""> -->
       <!-- nav -->
             <nav class="nav nav-tabs nav-stacked" >
                 <a class="nav-link active" href="#student" data-toggle="tab" onclick="loadStudent()"><div class="sv_tab">Sinh viên</div> <div class="display sv_tab"></div></a>
                 <a class="nav-link" href="#add_student" data-toggle="tab">Thêm sinh viên </a>
                 <a class="nav-link" href="#del_student" data-toggle="tab"><div class="sv_tab">Danh sách xóa</div> <div class="display sv_tab"></div></a>
             </nav>
-            <div class="tab-content">
+            <div class="tab-content container">
                 <!--  -->
-                <div class="tab-pane active" id="student">
+              
+                <div class="tab-pane active row" id="student">
                         
                       <!-- Khung tìm kiếm và bộ lọc -->
-                         <div id="sort">
+                         <div id="sort" class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="float: left; margin-bottom: 50px;">
                                     <h4 style="margin-top: 20px;">Bộ lọc</h4>
                                     <label><b>Khoa</b></label>
                                     <select class="form-control select" onmouseout="re_filter(document.getElementsByClassName('select'))">
@@ -119,9 +117,10 @@
                                     </select>
                                     <!-- <button onclick="re_filter(document.getElementsByClassName('select'))">Lọc</button> -->
                         </div>
-                        <table id="student_pane">
-                            
-                        </table>
+                        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" style="float: left;">
+                          <table id="student_pane"></table>
+                        </div>
+                        
                 </div>
                 <!--  -->
 
@@ -155,12 +154,13 @@
                     <select id="branch" class="null_value">
                       <option value="">---</option>
                       <option value="CN-TT">Công Nghệ - Thông Tin</option>
-                      <option value="KINH TẾ">Kinh Tế</option>
-                    </select>
-                    <button type="button" onclick="add_SVintoLocalStorage()">Thêm Sinh Viên</button>
+                      <option value="KINH TẾ">KINH TẾ</option>
+                      <option value="CƠ KHÍ">CƠ KHÍ</option>
+                    </select> <br><br>
+                    <button onclick="add_SVintoLocalStorage()">Thêm Sinh Viên</button>
                 </div>
                 <!--  -->
-
+              
 
 
 
@@ -169,28 +169,29 @@
 
                 <!--  -->
                 <div class="tab-pane" id="del_student">
-                  <div class="container">
-                    <table id="student_del">
-                        <tr>
-                            <td>STT</td>
-                            <td>MSSV</td>
-                            <td>Họ tên</td>
-                            <td>Tuổi</td>
-                            <td>Lớp</td>
-                            <td>Khoa</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </table>
-                </div>
+                        <div class="container">
+                          <table id="student_del">
+                              <tr>
+                                  <td>STT</td>
+                                  <td>MSSV</td>
+                                  <td>Họ tên</td>
+                                  <td>Tuổi</td>
+                                  <td>Lớp</td>
+                                  <td>Khoa</td>
+                                  <td></td>
+                                  <td></td>
+                              </tr>
+                          </table>
+                      </div>
                 </div>
                 <!--  -->
-            </div>
+          </div>
+    <!-- </div> -->
 
 
 
       <!-- close nav -->
-    </div>
+    
 
 
 
@@ -218,9 +219,6 @@
         Địa chỉ liên hệ số 12, Trịnh Đình Thảo 
       </footer>
       <!-- close footer -->
-
-
-
     <!-- Optional JavaScript -->
     <script src="./function.js"></script>
     <script src="./action.js"></script>

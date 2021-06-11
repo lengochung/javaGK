@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Bài tập giữa kỳ</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="style.css">k
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body onload="loadStudent()">
+       <!-- header -->
+       <header>
+        <!--  -->
+          <div id="logoBrand">
+                <img src="./image/max.png" width="200" height="50" alt="">
+              <div id="signIn">
+                Hi!
+                <a href="#" name='user'></a>
+                <a href="#" name='status'>
+                  
+                </a>
+              </div>
+          </div>
+        <!--  -->
+        <!--  -->
+          <nav class="navbar navbar-expand-sm navbar-light bg-light">
+            <button class="navbar-toggler d-lg-none"  data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                  <a class="nav-link" href="./index.html">Trang chủ<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Sản phẩm</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Của bạn</a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownId">
+                    <a class="dropdown-item" href="#">Giỏ hàng</a>
+                    <a class="dropdown-item" href="#">Đơn hàng</a>
+                  </div>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="...MSSV, tìm trong tên" id="search">
+                <button type="button" class="btn btn-outline-dark my-2 my-sm-0" onclick="re_search_nameID(document.getElementById('search').value)">Tìm</button>
+              </form>
+            </div>
+          </nav>
+      </header>
+      <!-- close header -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- <div id="khung" class=""> -->
+      <!-- nav -->
+            <nav class="nav nav-tabs nav-stacked" >
+                <a class="nav-link active" href="#student" data-toggle="tab" onclick="loadStudent()"><div class="sv_tab">Sinh viên</div> <div class="display sv_tab"></div></a>
+                <a class="nav-link" href="#add_student" data-toggle="tab">Thêm sinh viên </a>
+                <a class="nav-link" href="#del_student" data-toggle="tab"><div class="sv_tab">Danh sách xóa</div> <div class="display sv_tab"></div></a>
+            </nav>
+            <div class="tab-content container">
+                <!--  -->
+              
+                <div class="tab-pane active row" id="student">
+                        
+                      <!-- Khung tìm kiếm và bộ lọc -->
+                         <div id="sort" class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="float: left; margin-bottom: 50px;">
+                                    <h4 style="margin-top: 20px;">Bộ lọc</h4>
+                                    <label><b>Khoa</b></label>
+                                    <select class="form-control select" onmouseout="re_filter(document.getElementsByClassName('select'))">
+                                        
+                                    </select>
+                                    <label style="margin-top: 10px;"><b>Lớp</b></label>
+                                    <select class="form-control select" onmouseout="re_filter(document.getElementsByClassName('select'))">
+                                    
+                                    </select>
+                                    <!-- <button onclick="re_filter(document.getElementsByClassName('select'))">Lọc</button> -->
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" style="float: left;">
+                          <table id="student_pane"></table>
+                        </div>
+                        
+                </div>
+                <!--  -->
+
+
+
+
+
+
+
+
+
+
+
+                <!--  -->
+                <div class="tab-pane container" id="add_student">
+                    <label><b>Mã số sinh viên</b></label><br>
+                    <input type="text" id="id" class="form-control null_value">
+                    <label><b>Tên sinh viên</b></label><br>
+                    <input type="text" id="name_student" class="form-control null_value">
+                    <label><b>Tuổi</b></label><br>
+                    <input type="text" id="age" class="form-control null_value">
+                    <label><b>Số điện thoại</b></label><br>
+                    <input type="text" id="phone" class="form-control null_value">
+                    <label><b>Lớp </b><b style="margin-left: 70px;">Khoa</b></label><br>
+                    <select id="class" class="null_value">
+                      <option value="">---</option>
+                      <option value="CD20CT1">CD20CT1</option>
+                      <option value="CD20CT2">CD20CT2</option>
+                      <option value="CD20DH3">CD20DH3</option>
+                    </select>
+                    <select id="branch" class="null_value">
+                      <option value="">---</option>
+                      <option value="CN-TT">Công Nghệ - Thông Tin</option>
+                      <option value="KINH TẾ">KINH TẾ</option>
+                      <option value="CƠ KHÍ">CƠ KHÍ</option>
+                    </select> <br><br>
+                    <button onclick="add_SVintoLocalStorage()">Thêm Sinh Viên</button>
+                </div>
+                <!--  -->
+              
+
+
+
+
+
+
+                <!--  -->
+                <div class="tab-pane" id="del_student">
+                        <div class="container">
+                          <table id="student_del">
+                              <tr>
+                                  <td>STT</td>
+                                  <td>MSSV</td>
+                                  <td>Họ tên</td>
+                                  <td>Tuổi</td>
+                                  <td>Lớp</td>
+                                  <td>Khoa</td>
+                                  <td></td>
+                                  <td></td>
+                              </tr>
+                          </table>
+                      </div>
+                </div>
+                <!--  -->
+          </div>
+    <!-- </div> -->
+
+
+
+      <!-- close nav -->
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- footer -->
+      <footer>
+        Địa chỉ liên hệ số 12, Trịnh Đình Thảo 
+      </footer>
+      <!-- close footer -->
+    <!-- Optional JavaScript -->
+    <script src="./function.js"></script>
+    <script src="./action.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

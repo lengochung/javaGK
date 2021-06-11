@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="bao">fa</div>
+    <label class="bao"></label>
+    <div id="all" >
+                <table id="table">
+                    <tr>
+                        <td onclick="xoa(this)">STT</td>
+                        <td>MSSV</td>
+                        <td>Họ tên</td>
+                        <td>Tuổi</td>
+                        <td>Lớp</td>
+                        <td>Khoa</td>
+                    </tr>
+                    <tr></tr>
+                </table>
+    </div>
+    
+    <script>
+        var all = document.getElementById('table').getElementsByTagName('td');
+        var i = 1;    
+        for (const el of all) {
+                el.innerText = 'Bao' + i; i++;
+        }
+        
+        
+
+
+    </script>
+</body>
+</html>

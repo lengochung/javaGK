@@ -48,7 +48,8 @@ function loadStudent(){
                                 <td onclick='restore_all()'><a style="color: grey;" href="#">Hoàn tác tất cả</a></td>
                                 <td onclick='delete_all()'><a style="color: red;" href="#">Xóa tất cả</a></td>
                             </tr>`;
-    re_arraySVfromLocalStorage('student').forEach((element, i) => {
+    let array = re_arraySVfromLocalStorage('student').sort((a,b) => parseFloat(a.id) - parseFloat(b.id));
+    array.forEach((element, i) => {
         student_pane.innerHTML += `<tr>
                                         <td>${i+1}</td>
                                         <td>${element.id}</td>
@@ -171,3 +172,9 @@ function re_filter(filter){
         }
     }
 }
+
+
+
+
+
+// Sap xep

@@ -80,6 +80,7 @@ function re_arraySVfromLocalStorage(value){
             arr.push(JSON.parse(localStorage[key]));
         }
     }
+    array.sort((a,b)=>parseInt(a.id)-parseInt(b.id));
     return arr;
 }
 

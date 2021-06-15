@@ -32,3 +32,53 @@ footer{
 .sv_tab{
     float: left;
 }
+
+/*  */
+#themTruoc{
+    margin-right: 0px;
+}
+/*  */
+#student_del{
+    padding: 50px; margin: 50px 0;
+}
+#add_student{
+    width: 50%; margin: 50px auto;
+}
+#student{
+    margin: 40px 0;
+}
+#sort{
+    border-radius: 20px; border: 1px solid black; padding: 0 40px 20px 40px; width: 30%; margin-right: 2%;
+}
+#khung_student{
+    border: 1px black solid; border-radius: 20px;
+    padding: 20px; text-align: center;
+}
+.cell{
+    font-weight: bold;
+    text-align: center;
+}
+h3{
+    text-align: center; background: red;
+}
+table{
+    width: 100%; text-align: center;
+}
+/* button */
+.btnDel, .btnRes, .btnEdit{
+    border-radius: 5px; display: inline-block; padding: 2px 12px; color: white; opacity: 0.7;
+}
+.btnDel:hover, .btnRes:hover, .btnEdit:hover{
+    text-decoration: none; color: white; opacity: 1;
+}
+.btnDel{
+    background: red;
+} .btnEdit{
+    background: rgb(47, 47, 156);
+}
+.btnRes{
+    background: grey;
+}
+.selectStudent{
+    float: left; width: 30%; margin-right: 2%;
+}

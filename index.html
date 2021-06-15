@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Bai tap GkK</title>
+    <title>JavaScript Giữa Kỳ</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="style.css">k
+    <link rel="stylesheet" href="./style.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
@@ -14,7 +14,7 @@
        <header>
         <!--  -->
           <div id="logoBrand">
-                <img src="./image/max.png" width="200" height="50" alt="">
+                <img src=""  alt="">
               <div id="signIn">
                 Hi!
                 <a href="#" name='user'></a>
@@ -34,16 +34,6 @@
               <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
                   <a class="nav-link" href="./index.html">Trang chủ<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Sản phẩm</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Của bạn</a>
-                  <div class="dropdown-menu" aria-labelledby="dropdownId">
-                    <a class="dropdown-item" href="#">Giỏ hàng</a>
-                    <a class="dropdown-item" href="#">Đơn hàng</a>
-                  </div>
                 </li>
               </ul>
               <form class="form-inline my-2 my-lg-0">
@@ -98,7 +88,8 @@
                 <a class="nav-link active" href="#student" data-toggle="tab" onclick="loadStudent()"><div class="sv_tab">Sinh viên</div> <div class="display sv_tab"></div></a>
                 <a class="nav-link" href="#add_student" data-toggle="tab">Thêm sinh viên </a>
                 <a class="nav-link" href="#del_student" data-toggle="tab"><div class="sv_tab">Danh sách xóa</div> <div class="display sv_tab"></div></a>
-            </nav>
+                <a class="nav-link" href="#" data-toggle="tab" id="themTruoc"> <button onclick="insert()">Thêm trước 6 sinh viên</button> </a>
+              </nav>
             <div class="tab-content container">
                 <!--  -->
               
@@ -108,16 +99,21 @@
                          <div id="sort" class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="float: left; margin-bottom: 50px;">
                                     <h4 style="margin-top: 20px;">Bộ lọc</h4>
                                     <label><b>Khoa</b></label>
-                                    <select class="form-control select" onmouseout="re_filter(document.getElementsByClassName('select'))">
+                                    <select class="form-control select">
                                         
                                     </select>
                                     <label style="margin-top: 10px;"><b>Lớp</b></label>
-                                    <select class="form-control select" onmouseout="re_filter(document.getElementsByClassName('select'))">
+                                    <select class="form-control select">
                                     
+                                    </select><br>
+                                    <button class="form-control" onclick="re_filter(document.getElementsByClassName('select'))" style="background: rgb(75, 145, 75);">Lọc</button>
+                                    <br>
+                                    <h4>Sắp xếp theo</h4>
+                                    <select onmouseout="sortSX(this.value)" class="form-control select">
+
                                     </select>
-                                    <!-- <button onclick="re_filter(document.getElementsByClassName('select'))">Lọc</button> -->
                         </div>
-                        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" style="float: left;">
+                        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" style="float: left;" id="khung_student">
                           <table id="student_pane"></table>
                         </div>
                         
@@ -137,27 +133,41 @@
                 <!--  -->
                 <div class="tab-pane container" id="add_student">
                     <label><b>Mã số sinh viên</b></label><br>
-                    <input type="text" id="id" class="form-control null_value">
+                    <input type="text" id="id" class="form-control null_value"><br>
                     <label><b>Tên sinh viên</b></label><br>
-                    <input type="text" id="name_student" class="form-control null_value">
+                    <input type="text" id="name_student" class="form-control null_value"><br>
                     <label><b>Tuổi</b></label><br>
-                    <input type="text" id="age" class="form-control null_value">
+                    <input type="text" id="age" class="form-control null_value"><br>
                     <label><b>Số điện thoại</b></label><br>
-                    <input type="text" id="phone" class="form-control null_value">
-                    <label><b>Lớp </b><b style="margin-left: 70px;">Khoa</b></label><br>
-                    <select id="class" class="null_value">
-                      <option value="">---</option>
-                      <option value="CD20CT1">CD20CT1</option>
-                      <option value="CD20CT2">CD20CT2</option>
-                      <option value="CD20DH3">CD20DH3</option>
-                    </select>
-                    <select id="branch" class="null_value">
-                      <option value="">---</option>
-                      <option value="CN-TT">Công Nghệ - Thông Tin</option>
-                      <option value="KINH TẾ">KINH TẾ</option>
-                      <option value="CƠ KHÍ">CƠ KHÍ</option>
-                    </select> <br><br>
-                    <button onclick="add_SVintoLocalStorage()">Thêm Sinh Viên</button>
+                    <input type="text" id="phone" class="form-control null_value"><br>
+                    
+                    <div class="selectStudent">
+                      <label for=""><b>Khoa</b></label><br>
+                      <select id="branch" class="null_value form-control">
+                        <option value="">---</option>
+                        <option value="CN-TT">Công Nghệ - Thông Tin</option>
+                        <option value="KINH TẾ">KINH TẾ</option>
+                        <option value="CƠ KHÍ">CƠ KHÍ</option>
+                      </select>
+                    </div> 
+                    <div class="selectStudent">
+                      <label for=""><b>Lớp</b></label><br>
+                      <select id="class" class="null_value form-control">
+                        <option value="">---</option>
+                        <option value="CD20CT1">CD20CT1</option>
+                        <option value="CD20CT2">CD20CT2</option>
+                        <option value="CD20DH3">CD20DH3</option>
+                        <option value="CD20DH3">CD20CK4</option>
+                        <option value="CD20DH3">CD20CK5</option>
+                        <option value="CD20DH3">CD20KT1</option>
+                        <option value="CD20DH3">CD20KT2</option>
+                        <option value="CD20DH3">CD20KT3</option>
+                      </select>
+                    </div>
+                    <div class="selectStudent">
+                      <br>
+                      <button onclick="add_SVintoLocalStorage()" class="form-control" style="margin-top: 7px; background: rgb(34, 113, 233); margin-bottom: 50px;">Thêm Sinh Viên</button>
+                    </div>
                 </div>
                 <!--  -->
               

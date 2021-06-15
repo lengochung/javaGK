@@ -80,7 +80,6 @@ function re_arraySVfromLocalStorage(value){
             arr.push(JSON.parse(localStorage[key]));
         }
     }
-    arr.sort((a,b)=>parseInt(a.id)-parseInt(b.id));
     return arr;
 }
 
@@ -196,6 +195,17 @@ function re_ValueOptionOfSelect(select, attr){
         select.innerHTML += `<option value="${iterator}">${iterator}</option>`;
     }
 }
+function re_AllAttrofStudent(select){
+    select.innerHTML = "";
+    let array_dm = document.getElementById('danhmuc').getElementsByTagName('td');
+    let d = 0;
+    for (const iterator of array_dm) {
+        if(iterator.innerText!=""&&d<5){
+            select.innerHTML += `<option value="${iterator.innerText}">${iterator.innerText}</option>`;
+        }
+        d++;
+    }
+}
 
 
 
@@ -214,6 +224,50 @@ function displayTotalStudent(params1, params2){
     params1.innerHTML = "";
     params1.innerHTML += `(<font color="red"><b>${countStudent(re_arraySVfromLocalStorage(params2))}</b></font>)` 
 }
+
+// Sap xep
+function sortSX(valuesx){
+    let array = new Array(), d = 0;
+    let tr = student_pane.getElementsByTagName('tr');
+    
+        for (const key of tr) {
+            d++;
+            if(d>=3){
+                if(typeof(parseInt(key.getElementsByTagName('td')[0].innerText))=='number'){
+                    array.push(key);
+                } 
+            }
+        }
+            // Sap xep
+    if(valuesx=='MSSV'){
+        array.sort((a,b) =>parseInt(a.getElementsByTagName('td')[1].innerText)-parseInt(b.getElementsByTagName('td')[1].innerText));
+    } else if(valuesx=='Tuổi'){
+        array.sort((a,b) =>parseInt(a.getElementsByTagName('td')[3].innerText)-parseInt(b.getElementsByTagName('td')[3].innerText)); 
+    } else if(valuesx=='Số điện thoại'){
+        array.sort((a,b) =>parseInt(a.getElementsByTagName('td')[4].innerText)-parseInt(b.getElementsByTagName('td')[4].innerText));
+    } else if(valuesx=='Họ tên'){
+        array.sort((a,b) =>(a.getElementsByTagName('td')[2].innerText).localeCompare(b.getElementsByTagName('td')[2].innerText));
+    }
+
+    student_pane.innerHTML = `<tr><td colspan='9'><h3>Thông tin sinh viên</h3></td></tr>
+                                <tr id="danhmuc">
+                                    <td class="cell">STT</td>
+                                    <td class="cell">MSSV</td>
+                                    <td class="cell">Họ tên</td>
+                                    <td class="cell">Tuổi</td>
+                                    <td class="cell">Số điện thoại</td>
+                                    <td class="cell">Lớp</td>
+                                    <td class="cell">Khoa</td>
+                                    <td class="cell"></td>
+                                    <td class="cell"></td>
+                                </tr>`;
+    for (const iterator of array) {
+        student_pane.append(iterator);
+    }
+}
+
+
+
 
 
 

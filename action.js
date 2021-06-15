@@ -20,7 +20,12 @@ function insert(){
     check_insert(new Student(501200031,'Lâm Dương An',21,0940394793,'CD20CK4','CƠ KHÍ'));
     check_insert(new Student(501200042,'Lê Thị Phương Lan',18,021232323,'CD20CT1','CN-TT'));
     check_insert(new Student(501200111,'Nguyễn Hữu Tài',18,091298323,'CD20KT3','KINH TẾ'));
-    check_insert(new Student(501200032,'Phạm Quốc Tú',23,0993243993,'CD20CK5','CƠ KHÍ'));
+    check_insert(new Student(501200026,'Nguyễn Hoàng Chí Bảo',20,099312324,'CD20CK4','CƠ KHÍ'));
+    check_insert(new Student(501200036,'Phạm Quốc Tú',23,0993243993,'CD20CK5','CƠ KHÍ'));
+    check_insert(new Student(501200013,'Phan Văn Trường',24,938459384,'CD20KT3','KINH TẾ'));
+    check_insert(new Student(501200035,'Lê Hữu Hoàng',23,287343993,'CD20KT3','KINH TẾ'));
+    check_insert(new Student(501200040,'Trần Quốc Thịnh',20,099313093,'CD20CT!','CN-TT'));
+
     loadStudent();
 }
 

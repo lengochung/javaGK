@@ -42,17 +42,18 @@ footer{
     padding: 50px; margin: 50px 0;
 }
 #add_student{
-    width: 50%; margin: 50px auto;
+     margin: 50px auto;
 }
 #student{
     margin: 40px 0;
 }
 #sort{
-    border-radius: 20px; border: 1px solid black; padding: 0 40px 20px 40px; width: 30%; margin-right: 2%;
+    /* border-radius: 20px; border: 1px solid black; */
+     padding: 0 40px 20px 40px; 
 }
 #khung_student{
     border: 1px black solid; border-radius: 20px;
-    padding: 20px; text-align: center;
+    padding: 20px; text-align: center; 
 }
 .cell{
     font-weight: bold;

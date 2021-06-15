@@ -24,7 +24,7 @@ function insert(){
     check_insert(new Student(501200036,'Phạm Quốc Tú',23,0993243993,'CD20CK5','CƠ KHÍ'));
     check_insert(new Student(501200013,'Phan Văn Trường',24,938459384,'CD20KT3','KINH TẾ'));
     check_insert(new Student(501200035,'Lê Hữu Hoàng',23,287343993,'CD20KT3','KINH TẾ'));
-    check_insert(new Student(501200040,'Trần Quốc Thịnh',20,099313093,'CD20CT!','CN-TT'));
+    check_insert(new Student(501200040,'Trần Quốc Thịnh',20,099313093,'CD20CT1','CN-TT'));
 
     loadStudent();
 }

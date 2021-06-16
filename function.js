@@ -264,6 +264,7 @@ function sortSX(valuesx){
     for (const iterator of array) {
         student_pane.append(iterator);
     }
+    if(valuesx=="STT"){loadStudent()}
 }
 
 
